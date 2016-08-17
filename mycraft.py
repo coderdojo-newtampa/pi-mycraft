@@ -16,6 +16,8 @@
 #
 # At the end, the script will then start the modified minecraft binary
 #
+# -Augusto
+#
 
 import os
 
@@ -31,7 +33,6 @@ mymine=mydir+"/mycraft-pi-me"
 defaultfile=mydir+"/default"
 encoding="iso-8859-1"
 
-done = False
 defaultname = ""
 
 if not os.path.exists(mydir):
@@ -46,6 +47,7 @@ prompt = "Enter your username "
 if (len(defaultname) > 0):
     prompt += "["+defaultname+"] "
 
+done = False
 while not done:
     name = input(prompt +"> ")
 
@@ -57,6 +59,7 @@ while not done:
     # minecraft didn't like spaces in the name ... but it seems to work
     name = name.ljust(7)[:7].replace(" ", " ")
 
+    # Use trim() to check that the name is not just a bunch of spaces
     if (len(name.strip()) > 0):
         done = True
 
